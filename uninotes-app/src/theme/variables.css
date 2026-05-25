@@ -1,0 +1,147 @@
+/* ============================================
+   UniNotes - Custom Theme Variables
+   Paleta universitaria profesional
+   ============================================ */
+
+:root {
+  /* Colores Primarios */
+  --ion-color-primary: #2563EB;
+  --ion-color-primary-rgb: 37, 99, 235;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #1e56cf;
+  --ion-color-primary-tint: #3b73ed;
+
+  /* Colores Secundarios */
+  --ion-color-secondary: #7C3AED;
+  --ion-color-secondary-rgb: 124, 58, 237;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #6d33d1;
+  --ion-color-secondary-tint: #894eef;
+
+  /* Terciario */
+  --ion-color-tertiary: #6366F1;
+  --ion-color-tertiary-rgb: 99, 102, 241;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #575ad4;
+  --ion-color-tertiary-tint: #7376f2;
+
+  /* Éxito */
+  --ion-color-success: #22C55E;
+  --ion-color-success-rgb: 34, 197, 94;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #1eae53;
+  --ion-color-success-tint: #38cb6e;
+
+  /* Advertencia */
+  --ion-color-warning: #F59E0B;
+  --ion-color-warning-rgb: 245, 158, 11;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #d88b0a;
+  --ion-color-warning-tint: #f6a823;
+
+  /* Error */
+  --ion-color-danger: #EF4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d23c3c;
+  --ion-color-danger-tint: #f15757;
+
+  /* Claro */
+  --ion-color-light: #F8FAFC;
+  --ion-color-light-rgb: 248, 250, 252;
+  --ion-color-light-contrast: #1E293B;
+  --ion-color-light-contrast-rgb: 30, 41, 59;
+  --ion-color-light-shade: #dadcde;
+  --ion-color-light-tint: #f9fbfc;
+
+  /* Medio */
+  --ion-color-medium: #64748B;
+  --ion-color-medium-rgb: 100, 116, 139;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #58667a;
+  --ion-color-medium-tint: #748297;
+
+  /* Oscuro */
+  --ion-color-dark: #1E293B;
+  --ion-color-dark-rgb: 30, 41, 59;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1a2434;
+  --ion-color-dark-tint: #353e4f;
+
+  /* Fondos y textos modo claro */
+  --ion-background-color: #F8FAFC;
+  --ion-background-color-rgb: 248, 250, 252;
+  --ion-text-color: #1E293B;
+  --ion-text-color-rgb: 30, 41, 59;
+
+  --ion-toolbar-background: #ffffff;
+  --ion-toolbar-color: #1E293B;
+  --ion-tab-bar-background: #ffffff;
+  --ion-tab-bar-color: #94A3B8;
+  --ion-tab-bar-color-selected: #2563EB;
+  --ion-card-background: #ffffff;
+  --ion-item-background: #ffffff;
+
+  /* Variables personalizadas UniNotes */
+  --uni-gradient-start: #2563EB;
+  --uni-gradient-end: #7C3AED;
+  --uni-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --uni-card-radius: 16px;
+  --uni-text-secondary: #64748B;
+}
+
+/* ============================================
+   Modo Oscuro
+   ============================================ */
+body.dark {
+  --ion-background-color: #0F172A;
+  --ion-background-color-rgb: 15, 23, 42;
+  --ion-text-color: #E2E8F0;
+  --ion-text-color-rgb: 226, 232, 240;
+
+  --ion-toolbar-background: #1E293B;
+  --ion-toolbar-color: #E2E8F0;
+  --ion-tab-bar-background: #1E293B;
+  --ion-tab-bar-color: #64748B;
+  --ion-tab-bar-color-selected: #60A5FA;
+  --ion-card-background: #1E293B;
+  --ion-item-background: #1E293B;
+
+  --ion-color-light: #1E293B;
+  --ion-color-light-rgb: 30, 41, 59;
+  --ion-color-light-contrast: #E2E8F0;
+  --ion-color-light-contrast-rgb: 226, 232, 240;
+  --ion-color-light-shade: #1a2434;
+  --ion-color-light-tint: #334155;
+
+  --uni-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --uni-text-secondary: #94A3B8;
+
+  --ion-color-step-50: #1a2332;
+  --ion-color-step-100: #1e293b;
+  --ion-color-step-150: #253344;
+  --ion-color-step-200: #2d3d4e;
+  --ion-color-step-250: #344757;
+  --ion-color-step-300: #3c5161;
+  --ion-color-step-350: #435b6a;
+  --ion-color-step-400: #4b6574;
+  --ion-color-step-450: #526f7d;
+  --ion-color-step-500: #5a7987;
+  --ion-color-step-550: #618390;
+  --ion-color-step-600: #698d9a;
+  --ion-color-step-650: #7097a3;
+  --ion-color-step-700: #78a1ad;
+  --ion-color-step-750: #7fabb6;
+  --ion-color-step-800: #87b5c0;
+  --ion-color-step-850: #8ebfc9;
+  --ion-color-step-900: #96c9d3;
+  --ion-color-step-950: #9dd3dc;
+}
