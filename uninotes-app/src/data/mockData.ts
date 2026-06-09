@@ -10,8 +10,8 @@ const DEMO_USER_ID = 'demo-user-001';
 
 const demoUser: User = {
   id: DEMO_USER_ID,
-  name: 'Carlos Martínez',
-  email: 'carlos@universidad.edu',
+  name: 'David Parra',
+  email: 'davidparrra13@gmail.com',
   password: '123456',
   career: 'Ingeniería de Sistemas',
   semester: '5to Semestre',

@@ -100,7 +100,7 @@ const Login: React.FC = () => {
               <strong>Cuenta demo:</strong>
             </p>
             <p style={{ fontSize: '13px', color: 'var(--uni-text-secondary)', margin: '0' }}>
-              carlos@universidad.edu / 123456
+              davidparrra13@gmail.com / 123456
             </p>
           </div>
         </div>
