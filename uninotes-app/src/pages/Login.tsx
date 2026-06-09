@@ -10,6 +10,7 @@ import {
 import { schoolOutline, mailOutline, lockClosedOutline, logInOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { resetToDemoData } from '../data/mockData';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -37,6 +38,17 @@ const Login: React.FC = () => {
     } else {
       present({ message: result.message, duration: 2000, color: 'danger' });
     }
+  };
+
+  const handleRestoreDemo = () => {
+    resetToDemoData();
+    setEmail('davidparrra13@gmail.com');
+    setPassword('123456');
+    present({
+      message: 'Datos demo restaurados. Usa davidparrra13@gmail.com / 123456',
+      duration: 2500,
+      color: 'success',
+    });
   };
 
   return (
@@ -102,6 +114,15 @@ const Login: React.FC = () => {
             <p style={{ fontSize: '13px', color: 'var(--uni-text-secondary)', margin: '0' }}>
               davidparrra13@gmail.com / 123456
             </p>
+            <IonButton
+              expand="block"
+              fill="outline"
+              size="small"
+              style={{ marginTop: '12px' }}
+              onClick={handleRestoreDemo}
+            >
+              Restaurar cuenta demo
+            </IonButton>
           </div>
         </div>
       </IonContent>

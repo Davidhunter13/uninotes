@@ -212,7 +212,17 @@ const demoReminders: Reminder[] = [
 /** Inicializar datos de demostración en primer lanzamiento */
 export const initializeMockData = (): void => {
   const initialized = StorageService.getValue(STORAGE_KEYS.DATA_INITIALIZED);
-  if (initialized) return;
+  if (initialized) {
+    // Recuperar usuario demo si el flag existe pero la colección quedó vacía o fue alterada.
+    const users = StorageService.getAll<User>(STORAGE_KEYS.USERS);
+    const hasDemoUser = users.some(user => user.id === DEMO_USER_ID);
+
+    if (!hasDemoUser) {
+      StorageService.save<User>(STORAGE_KEYS.USERS, demoUser);
+    }
+
+    return;
+  }
 
   // Registrar usuario demo
   StorageService.save<User>(STORAGE_KEYS.USERS, demoUser);
@@ -226,4 +236,18 @@ export const initializeMockData = (): void => {
 
   // Marcar como inicializado
   StorageService.setValue(STORAGE_KEYS.DATA_INITIALIZED, 'true');
+};
+
+/** Restablecer datos de la app y volver a cargar la cuenta demo */
+export const resetToDemoData = (): void => {
+  StorageService.removeKey(STORAGE_KEYS.CURRENT_USER);
+  StorageService.removeKey(STORAGE_KEYS.USERS);
+  StorageService.removeKey(STORAGE_KEYS.SUBJECTS);
+  StorageService.removeKey(STORAGE_KEYS.TASKS);
+  StorageService.removeKey(STORAGE_KEYS.GRADES);
+  StorageService.removeKey(STORAGE_KEYS.SCHEDULE);
+  StorageService.removeKey(STORAGE_KEYS.REMINDERS);
+  StorageService.removeKey(STORAGE_KEYS.DATA_INITIALIZED);
+
+  initializeMockData();
 };

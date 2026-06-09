@@ -12,8 +12,10 @@ const AVATAR_COLORS = ['#2563EB', '#7C3AED', '#22C55E', '#F59E0B', '#EF4444', '#
 export class AuthService {
   /** Registrar un nuevo usuario */
   static register(name: string, email: string, password: string): { success: boolean; message: string } {
+    const normalizedEmail = email.trim().toLowerCase();
+    const normalizedPassword = password.trim();
     const users = StorageService.getAll<User>(STORAGE_KEYS.USERS);
-    const exists = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+    const exists = users.find(u => u.email.toLowerCase() === normalizedEmail);
 
     if (exists) {
       return { success: false, message: 'Este correo ya está registrado.' };
@@ -22,8 +24,8 @@ export class AuthService {
     const newUser: User = {
       id: uuidv4(),
       name,
-      email: email.toLowerCase(),
-      password,
+      email: normalizedEmail,
+      password: normalizedPassword,
       career: '',
       semester: '',
       avatarColor: AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)],
@@ -36,9 +38,11 @@ export class AuthService {
 
   /** Iniciar sesión */
   static login(email: string, password: string): { success: boolean; message: string; user?: User } {
+    const normalizedEmail = email.trim().toLowerCase();
+    const normalizedPassword = password.trim();
     const users = StorageService.getAll<User>(STORAGE_KEYS.USERS);
     const user = users.find(
-      u => u.email.toLowerCase() === email.toLowerCase() && u.password === password
+      u => u.email.toLowerCase() === normalizedEmail && u.password === normalizedPassword
     );
 
     if (!user) {
